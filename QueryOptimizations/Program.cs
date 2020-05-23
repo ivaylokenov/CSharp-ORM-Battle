@@ -32,7 +32,7 @@
 
             // DataSeeder.Seed();
 
-            // TooManyQueriesBattle.Fight();
+            TooManyQueriesBattle.Fight();
             // LazyLoadingTooManyQueriesBattle.Fight();
             // SelectSpecificColumnsBattle.Fight();
             // IncorrectDataLoadingBattle.Fight();

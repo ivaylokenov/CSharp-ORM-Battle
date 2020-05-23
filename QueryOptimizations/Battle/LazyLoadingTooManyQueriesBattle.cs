@@ -136,13 +136,13 @@
             // Dapper With EF Query
             using (var connection = new SqlConnection(Settings.ConnectionString))
             {
-                var cats = connection.Query<Cat>(
+                var ownerNames = connection.Query<string>(
                     @"SELECT [o].[Name]
                     FROM [Cats] AS [c]
                     INNER JOIN [Owners] AS [o] ON [c].[OwnerId] = [o].[Id]
                     WHERE CHARINDEX(N'1', [c].[Name]) > 0");
 
-                Console.WriteLine($"Dapper (EF): {stopWatch.Elapsed} - {cats.Count()} Results");
+                Console.WriteLine($"Dapper (EF): {stopWatch.Elapsed} - {ownerNames.Count()} Results");
             }
 
             stopWatch = Stopwatch.StartNew();
@@ -150,7 +150,7 @@
             // Dapper With EF Query Cached
             using (var connection = new SqlConnection(Settings.ConnectionString))
             {
-                var cats = connection.Query<Cat>(
+                var cats = connection.Query<string>(
                     @"SELECT [o].[Name]
                     FROM [Cats] AS [c]
                     INNER JOIN [Owners] AS [o] ON [c].[OwnerId] = [o].[Id]
@@ -164,7 +164,7 @@
             // Dapper With LINQ to DB Query
             using (var connection = new SqlConnection(Settings.ConnectionString))
             {
-                var cats = connection.Query<Cat>(
+                var cats = connection.Query<string>(
                     @"SELECT
 	                    [o_1].[Name]
                     FROM
@@ -181,7 +181,7 @@
             // Dapper With LINQ to DB Query Cached
             using (var connection = new SqlConnection(Settings.ConnectionString))
             {
-                var cats = connection.Query<Cat>(
+                var cats = connection.Query<string>(
                     @"SELECT
 	                    [o_1].[Name]
                     FROM

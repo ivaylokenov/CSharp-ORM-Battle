@@ -53,7 +53,7 @@
             {
                 var cats = db.Cats
                     .Where(c => c.Owner.Cats.Count > 1)
-                    // .AsNoTracking()
+                    .AsNoTracking()
                     .ToDictionary(c => c.Name, c => c.Age);
 
                 Console.WriteLine($"EF Core Getting All Columns: {stopWatch.Elapsed} - {cats.Count} Results");
@@ -66,7 +66,7 @@
             {
                 var cats = db.Cats
                     .Where(c => c.Owner.Cats.Count > 1)
-                    // .AsNoTracking()
+                    .AsNoTracking()
                     .ToDictionary(c => c.Name, c => c.Age);
 
                 Console.WriteLine($"EF Core Getting All Columns Cached: {stopWatch.Elapsed} - {cats.Count} Results");

@@ -207,6 +207,7 @@
                 var dbOwners = connection.Query<Owner>(o => o.Name.Contains("1"));
                 var dbCats = connection.Query<Cat>(c => c.Name.Contains("1"));
 
+                // In Memory
                 var cats = dbOwners
                     .Join(dbCats,
                         o => o.Id,
@@ -338,7 +339,7 @@
 		                        INNER JOIN [Cats] [c_1] ON [o].[Id] = [c_1].[OwnerId]
                         WHERE
 	                        [c_1].[Name] LIKE N'%1%' AND [o].[Name] LIKE N'%1%'")
-                    // .AsNoTracking()
+                    .AsNoTracking()
                     .ToList();
 
                 Console.WriteLine($"EF Core Raw SQL Query: {stopWatch.Elapsed} - {cats.Count} Results");
