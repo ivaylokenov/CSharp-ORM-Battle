@@ -35,6 +35,17 @@ Gold sponsors:
   </tbody>
 </table>
 
+Table of contents:
+
+- About Code It Up
+- Why This Battle?
+- Popular C# Data Access Technologies
+- How To Choose an ORM?
+- The Anatomy of a Query
+- Query Optimizations - The Actual Battle!
+- Data Layer Best Practices
+- Do You Need the Repository Pattern?
+
 If you'd like to support me and my projects, please consider:
 
 - [My mentorship program on Patreon](https://www.patreon.com/ivaylokenov)
